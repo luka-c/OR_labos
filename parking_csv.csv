@@ -1,0 +1,11 @@
+"id","imeparkinga","brojmjesta","brojinvalidskihmjesta","vrsta","zona","županija","grad","kvart","ulica","kućnibroj"
+1,"Importanne",50,5,"automobilski","II.1. zona","Grad Zagreb","Zagreb","Donji Grad","Trg Ante Starčevića","7"
+2,"Glavni kolodvor",30,4,"automobilski","II.3. zona","Grad Zagreb","Zagreb","Donji Grad","Trg Stjepana Radića",NULL
+3,"S.D. Martinovka",70,14,"automobilski","II.1. zona","Grad Zagreb","Zagreb","Donji Grad","Zelinska ulica",NULL
+4,"Parkiralište Paromlin",180,22,"automobilski","II.1. zona","Grad Zagreb","Zagreb","Donji Grad","Koturaška ulica","1A"
+5,"Parking IV. zone",45,9,"automobilski","IV.1. zona","Grad Zagreb","Zagreb","Donji Grad","Strojarska ulica","20"
+6,"Parking Strojarska",60,12,"automobilski","II.1. zona","Grad Zagreb","Zagreb","Donji Grad","Strojarska cesta",NULL
+7,"Parking Supermarket",120,10,"automobilski","Besplatna","Grad Zagreb","Zagreb","Kruge","Trnjanska cesta","42"
+8,"FER parking za bicikle",90,0,"biciklistički","Besplatna","Grad Zagreb","Zagreb","Donji Grad","Unska ulica","3"
+9,"Parking Arena Zagreb",300,40,"automobilski","Besplatna","Grad Zagreb","Zagreb","Lanište","Ul. Vice Vukova","6"
+10,"Sigurno arkiralište",100,8,"kamionski","IV.1. zona","Grad Zagreb","Zagreb","Jankomir","Jankomir","25"
