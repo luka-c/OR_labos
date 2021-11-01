@@ -1,0 +1,52 @@
+[
+  {
+    "zona": "Besplatna",
+    "dnevnakarta": 0,
+    "pozivnibroj": "NULL"
+  },
+  {
+    "zona": "I. zona",
+    "dnevnakarta": 100,
+    "pozivnibroj": 700101
+  },
+  {
+    "zona": "I. zona 1/2 h",
+    "dnevnakarta": 100,
+    "pozivnibroj": 700101
+  },
+  {
+    "zona": "I.1. zona",
+    "dnevnakarta": 150,
+    "pozivnibroj": 700101
+  },
+  {
+    "zona": "I.2. zona",
+    "dnevnakarta": 120,
+    "pozivnibroj": 700101
+  },
+  {
+    "zona": "II.1. zona",
+    "dnevnakarta": 60,
+    "pozivnibroj": 700102
+  },
+  {
+    "zona": "II.3. zona",
+    "dnevnakarta": 60,
+    "pozivnibroj": 700102
+  },
+  {
+    "zona": "III. zona",
+    "dnevnakarta": 20,
+    "pozivnibroj": 700103
+  },
+  {
+    "zona": "IV.1. zona",
+    "dnevnakarta": 30,
+    "pozivnibroj": 700104
+  },
+  {
+    "zona": "IV.2. zona",
+    "dnevnakarta": 30,
+    "pozivnibroj": 700104
+  }
+]
