@@ -25,8 +25,9 @@ Atributi:
 (Entitet Zona) 
 - zona - identifikator zone, za svaku zonu jedninstven, primarni ključ, ne smije biti NULL, VARCHAR
 - dnevnaKarta - cijena dnevne karte za zonu, izražena u KN, ne smije biti NULL, FLOAT
-- pozivniBroj - telefonski broj preko kojeg se plaća zona, ne mora biti jedinstven, ne smije biti NULL, INTEGER
+- pozivniBroj - telefonski broj preko kojeg se plaća zona, ne mora biti jedinstven, smije biti NULL, INTEGER
                           
 Dodatno
   - identifikator zone je varchar umjesto integera zato što je klasifikacija zona takva da postoje zone 'I.1 zona' i 'I.2 zona'
   - pozivni broj također nije jedinstven zbog klasifikacije zona, zone 'I.1 zona' i 'I.2 zona' imaju isti pozivni broj jer su varijacije 1.zone
+  - dnevna karta smije biti NULL jer postoji besplatan parking
