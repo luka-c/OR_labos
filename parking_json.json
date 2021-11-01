@@ -5,12 +5,16 @@
     "brojmjesta": 50,
     "brojinvalidskihmjesta": 5,
     "vrsta": "automobilski",
-    "zona": "II.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Trg Ante Starčevića",
-    "kućnibroj": 7
+    "kućnibroj": "7",
+    "zona": {
+      "id_zona": "II.1. zona",
+      "dnevnakarta": 60,
+      "pozivnibroj": 700102
+    }
   },
   {
     "id": 2,
@@ -18,12 +22,16 @@
     "brojmjesta": 30,
     "brojinvalidskihmjesta": 4,
     "vrsta": "automobilski",
-    "zona": "II.3. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Trg Stjepana Radića",
-    "kućnibroj": "NULL"
+    "kućnibroj": null,
+    "zona": {
+      "id_zona": "II.3. zona",
+      "dnevnakarta": 60,
+      "pozivnibroj": 700102
+    }
   },
   {
     "id": 3,
@@ -31,12 +39,16 @@
     "brojmjesta": 70,
     "brojinvalidskihmjesta": 14,
     "vrsta": "automobilski",
-    "zona": "II.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Zelinska ulica",
-    "kućnibroj": "NULL"
+    "kućnibroj": null,
+    "zona": {
+      "id_zona": "II.1. zona",
+      "dnevnakarta": 60,
+      "pozivnibroj": 700102
+    }
   },
   {
     "id": 4,
@@ -44,12 +56,16 @@
     "brojmjesta": 180,
     "brojinvalidskihmjesta": 22,
     "vrsta": "automobilski",
-    "zona": "II.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Koturaška ulica",
-    "kućnibroj": "1A"
+    "kućnibroj": "1A",
+    "zona": {
+      "id_zona": "II.1. zona",
+      "dnevnakarta": 60,
+      "pozivnibroj": 700102
+    }
   },
   {
     "id": 5,
@@ -57,12 +73,16 @@
     "brojmjesta": 45,
     "brojinvalidskihmjesta": 9,
     "vrsta": "automobilski",
-    "zona": "IV.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Strojarska ulica",
-    "kućnibroj": 20
+    "kućnibroj": "20",
+    "zona": {
+      "id_zona": "IV.1. zona",
+      "dnevnakarta": 30,
+      "pozivnibroj": 700104
+    }
   },
   {
     "id": 6,
@@ -70,12 +90,16 @@
     "brojmjesta": 60,
     "brojinvalidskihmjesta": 12,
     "vrsta": "automobilski",
-    "zona": "II.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Strojarska cesta",
-    "kućnibroj": "NULL"
+    "kućnibroj": null,
+    "zona": {
+      "id_zona": "II.1. zona",
+      "dnevnakarta": 60,
+      "pozivnibroj": 700102
+    }
   },
   {
     "id": 7,
@@ -83,12 +107,16 @@
     "brojmjesta": 120,
     "brojinvalidskihmjesta": 10,
     "vrsta": "automobilski",
-    "zona": "Besplatna",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Kruge",
     "ulica": "Trnjanska cesta",
-    "kućnibroj": 42
+    "kućnibroj": "42",
+    "zona": {
+      "id_zona": "Besplatna",
+      "dnevnakarta": 0,
+      "pozivnibroj": null
+    }
   },
   {
     "id": 8,
@@ -96,12 +124,16 @@
     "brojmjesta": 90,
     "brojinvalidskihmjesta": 0,
     "vrsta": "biciklistički",
-    "zona": "Besplatna",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Donji Grad",
     "ulica": "Unska ulica",
-    "kućnibroj": 3
+    "kućnibroj": "3",
+    "zona": {
+      "id_zona": "Besplatna",
+      "dnevnakarta": 0,
+      "pozivnibroj": null
+    }
   },
   {
     "id": 9,
@@ -109,12 +141,16 @@
     "brojmjesta": 300,
     "brojinvalidskihmjesta": 40,
     "vrsta": "automobilski",
-    "zona": "Besplatna",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Lanište",
     "ulica": "Ul. Vice Vukova",
-    "kućnibroj": 6
+    "kućnibroj": "6",
+    "zona": {
+      "id_zona": "Besplatna",
+      "dnevnakarta": 0,
+      "pozivnibroj": null
+    }
   },
   {
     "id": 10,
@@ -122,11 +158,15 @@
     "brojmjesta": 100,
     "brojinvalidskihmjesta": 8,
     "vrsta": "kamionski",
-    "zona": "IV.1. zona",
     "županija": "Grad Zagreb",
     "grad": "Zagreb",
     "kvart": "Jankomir",
     "ulica": "Jankomir",
-    "kućnibroj": 25
+    "kućnibroj": "25",
+    "zona": {
+      "id_zona": "IV.1. zona",
+      "dnevnakarta": 30,
+      "pozivnibroj": 700104
+    }
   }
 ]

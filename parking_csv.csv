@@ -1,0 +1,11 @@
+id,imeparkinga,brojmjesta,brojinvalidskihmjesta,vrsta,županija,grad,kvart,ulica,kućnibroj,zona_id,dnevnakarta,pozivni_broj
+1,Importanne,50,5,automobilski,Grad Zagreb,Zagreb,Donji Grad,Trg Ante Starčevića,7,II.1. zona,60,700102
+2,Glavni kolodvor,30,4,automobilski,Grad Zagreb,Zagreb,Donji Grad,Trg Stjepana Radića,,II.3. zona,60,700102
+3,S.D. Martinovka,70,14,automobilski,Grad Zagreb,Zagreb,Donji Grad,Zelinska ulica,,II.1. zona,60,700102
+4,Parkiralište Paromlin,180,22,automobilski,Grad Zagreb,Zagreb,Donji Grad,Koturaška ulica,1A,II.1. zona,60,700102
+5,Parking IV. zone,45,9,automobilski,Grad Zagreb,Zagreb,Donji Grad,Strojarska ulica,20,IV.1. zona,30,700104
+6,Parking Strojarska,60,12,automobilski,Grad Zagreb,Zagreb,Donji Grad,Strojarska cesta,,II.1. zona,60,700102
+7,Parking Supermarket,120,10,automobilski,Grad Zagreb,Zagreb,Kruge,Trnjanska cesta,42,Besplatna,0,
+8,FER parking za bicikle,90,0,biciklistički,Grad Zagreb,Zagreb,Donji Grad,Unska ulica,3,Besplatna,0,
+9,Parking Arena Zagreb,300,40,automobilski,Grad Zagreb,Zagreb,Lanište,Ul. Vice Vukova,6,Besplatna,0,
+10,Sigurno arkiralište,100,8,kamionski,Grad Zagreb,Zagreb,Jankomir,Jankomir,25,IV.1. zona,30,700104
