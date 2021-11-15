@@ -1,0 +1,246 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "Parking baza podataka",
+    "description": "Skup lokacija parkinga za otvoreno računarstvo",
+    "default": [],
+    "examples": [
+        [
+            {
+                "id": 1,
+                "imeparkinga": "Importanne",
+                "brojmjesta": 50,
+                "brojinvalidskihmjesta": 5,
+                "vrsta": "automobilski",
+                "županija": "Grad Zagreb",
+                "grad": "Zagreb",
+                "kvart": "Donji Grad",
+                "ulica": "Trg Ante Starčevića",
+                "kućnibroj": "7",
+                "zona": {
+                    "id_zona": "II.1. zona",
+                    "dnevnakarta": 60,
+                    "pozivnibroj": 700102
+                }
+            },
+            {
+                "id": 2,
+                "imeparkinga": "Glavni kolodvor",
+                "brojmjesta": 30,
+                "brojinvalidskihmjesta": 4,
+                "vrsta": "automobilski",
+                "županija": "Grad Zagreb",
+                "grad": "Zagreb",
+                "kvart": "Donji Grad",
+                "ulica": "Trg Stjepana Radića",
+                "kućnibroj": null,
+                "zona": {
+                    "id_zona": "II.3. zona",
+                    "dnevnakarta": 60,
+                    "pozivnibroj": 700102
+                }
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "parking": [
+            {
+                "$id": "#/items/parking/0",
+                "type": "object",
+                "title": "The first parking schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "id": 1,
+                        "imeparkinga": "Importanne",
+                        "brojmjesta": 50,
+                        "brojinvalidskihmjesta": 5,
+                        "vrsta": "automobilski",
+                        "županija": "Grad Zagreb",
+                        "grad": "Zagreb",
+                        "kvart": "Donji Grad",
+                        "ulica": "Trg Ante Starčevića",
+                        "kućnibroj": "7",
+                        "zona": {
+                            "id_zona": "II.1. zona",
+                            "dnevnakarta": 60,
+                            "pozivnibroj": 700102
+                        }
+                    }
+                ],
+                "required": [
+                    "id",
+                    "imeparkinga",
+                    "brojmjesta",
+                    "brojinvalidskihmjesta",
+                    "vrsta",
+                    "županija",
+                    "grad",
+                    "kvart",
+                    "ulica",
+                    "kućnibroj",
+                    "zona"
+                ],
+                "properties": {
+                    "id": {
+                        "$id": "#/items/parking/0/properties/id",
+                        "type": "integer",
+                        "title": "The id schema",
+                        "description": "Identifikacijski broj parkinga",
+                        "default": 0,
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "imeparkinga": {
+                        "$id": "#/items/parking/0/properties/imeparkinga",
+                        "type": "string",
+                        "title": "The imeparkinga schema",
+                        "description": "Ime parkinga",
+                        "default": "",
+                        "examples": [
+                            "Importanne"
+                        ]
+                    },
+                    "brojmjesta": {
+                        "$id": "#/items/parking/0/properties/brojmjesta",
+                        "type": "integer",
+                        "title": "The brojmjesta schema",
+                        "description": "Ukupan broj mjesta na nekome parkingu",
+                        "default": 0,
+                        "examples": [
+                            50
+                        ]
+                    },
+                    "brojinvalidskihmjesta": {
+                        "$id": "#/items/parking/0/properties/brojinvalidskihmjesta",
+                        "type": "integer",
+                        "title": "The brojinvalidskihmjesta schema",
+                        "description": "Broj invalidskih mjesta na nekome parkingu",
+                        "default": 0,
+                        "examples": [
+                            5
+                        ]
+                    },
+                    "vrsta": {
+                        "$id": "#/items/parking/0/properties/vrsta",
+                        "type": "string",
+                        "title": "The vrsta schema",
+                        "description": "Vrsta parkinga (automobilski, kamionski, autobusni, biciklistički, mješoviti)",
+                        "default": "",
+                        "examples": [
+                            "automobilski"
+                        ]
+                    },
+                    "županija": {
+                        "$id": "#/items/parking/0/properties/%C5%BEupanija",
+                        "type": "string",
+                        "title": "The županija schema",
+                        "description": "Županija u koju pripada parking",
+                        "default": "",
+                        "examples": [
+                            "Grad Zagreb"
+                        ]
+                    },
+                    "grad": {
+                        "$id": "#/items/parking/0/properties/grad",
+                        "type": "string",
+                        "title": "The grad schema",
+                        "description": "Grad u koji pripada parking",
+                        "default": "",
+                        "examples": [
+                            "Zagreb"
+                        ]
+                    },
+                    "kvart": {
+                        "$id": "#/items/parking/0/properties/kvart",
+                        "type": "string",
+                        "title": "The kvart schema",
+                        "description": "Kvart u koju pripada parking",
+                        "default": "",
+                        "examples": [
+                            "Donji Grad"
+                        ]
+                    },
+                    "ulica": {
+                        "$id": "#/items/parking/0/properties/ulica",
+                        "type": "string",
+                        "title": "The ulica schema",
+                        "description": "Ulica u koju pripada parking",
+                        "default": "",
+                        "examples": [
+                            "Trg Ante Starčevića"
+                        ]
+                    },
+                    "kućnibroj": {
+                        "$id": "#/items/parking/0/properties/kucnibroj",
+                        "type": "string",
+                        "title": "The kućnibroj schema",
+                        "description": "Kućni broj parkinga",
+                        "default": "",
+                        "examples": [
+                            "7"
+                        ]
+                    },
+                    "zona": {
+                        "$id": "#/items/parking/0/properties/zona",
+                        "type": "object",
+                        "title": "The zona schema",
+                        "description": "Parkirna zona",
+                        "default": {},
+                        "examples": [
+                            {
+                                "id_zona": "II.1. zona",
+                                "dnevnakarta": 60,
+                                "pozivnibroj": 700102
+                            }
+                        ],
+                        "required": [
+                            "id_zona",
+                            "dnevnakarta",
+                            "pozivnibroj"
+                        ],
+                        "properties": {
+                            "id_zona": {
+                                "$id": "#/items/parking/0/properties/zona/properties/id_zona",
+                                "type": "string",
+                                "title": "The id_zona schema",
+                                "description": "Identifikator zone",
+                                "default": "",
+                                "examples": [
+                                    "II.1. zona"
+                                ]
+                            },
+                            "dnevnakarta": {
+                                "$id": "#/items/parking/0/properties/zona/properties/dnevnakarta",
+                                "type": "integer",
+                                "title": "The dnevnakarta schema",
+                                "description": "Cijena dneve karte parkirne zone izražena u KN",
+                                "default": 0,
+                                "examples": [
+                                    60
+                                ]
+                            },
+                            "pozivnibroj": {
+                                "$id": "#/items/parking/0/properties/zona/properties/pozivnibroj",
+                                "type": "integer",
+                                "title": "The pozivnibroj schema",
+                                "description": "Pozivni broj parkirne zone",
+                                "default": 0,
+                                "examples": [
+                                    700102
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}

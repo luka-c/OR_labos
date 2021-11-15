@@ -1,0 +1,83 @@
+@font-face {
+    font-family: simple;
+    src: url(/public/styles/SIMPLIFICA\ Typeface.ttf);
+}
+
+body {
+    background-color: rgb(111,198,170);
+    font-family: simple;
+    align-items: center;
+    margin: 0;
+    margin-top: 15px;
+}
+
+table {
+    font-family: simple;
+    background-color: rgb(51,51,51);
+    color: rgb(111,198,170);
+    width: 90%;
+    text-align: center;
+}
+
+td {
+    color: rgb(51,51,51);
+}
+
+.dataTables_filter {
+    margin-bottom: 5px !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-color: rgb(51,51,51) !important;
+
+}
+
+.dataTables_length {
+    font-size: large;
+    margin-left: 10px;
+}
+
+.dataTables_info {
+    font-size: large;
+    margin-left: 10px;
+}
+
+.filter {
+    align-items: center;
+    text-align: center;
+    font-size: large;
+}
+
+.submit {
+    align-items: center;
+    text-align: center;
+}
+
+fieldset {
+    margin-left: 15%;
+    margin-right: 15%;
+    border-color: rgb(51,51,51);
+    border-width: 1px;
+}
+
+.base_button {
+    color: rgb(111,198,170);
+    font-size: larger;
+    font-family: simple;
+    background-color: rgb(51,51,51);
+    height: 100%;
+    border-radius: 7px;
+    width: 20%;
+    margin-bottom: 3px;
+}
+
+div {
+    text-align: center;
+}
+
+.dt-button {
+    font-size: large;
+    background-color: rgb(51,51,51);
+    color: rgb(111,198,170);
+    border-radius: 5px;
+}

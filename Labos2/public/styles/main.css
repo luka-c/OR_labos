@@ -1,0 +1,66 @@
+@font-face {
+    font-family: simple;
+    src: url(/public/styles/SIMPLIFICA\ Typeface.ttf);
+}
+body {
+    font-family: simple;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(111,198,170);
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(51,51,51);
+    font-weight: bold;
+    color: rgb(111,198,170);
+    text-align: center;
+    margin-top: 0px;
+}
+
+h2 {
+    font-size: larger;
+    
+}
+
+ul {
+    background-color: rgb(51,51,51);
+    color: rgb(111,198,170);
+    border-radius: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: larger;
+}
+
+.naslov {
+    font-size: xx-large;
+}
+
+.table_button {
+    text-align: center;
+    padding: 0;
+    height: 2.5em;
+}
+
+.base_button {
+    color: rgb(111,198,170);
+    font-size: larger;
+    font-family: simple;
+    background-color: rgb(51,51,51);
+    height: 100%;
+    border-radius: 7px;
+    width: 15%;
+}
+
+div {
+    text-align: center;
+    font-size: larger;
+}
+
+.divbtn {
+    margin-bottom: 5px;
+}

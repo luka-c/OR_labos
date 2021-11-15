@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skup lokacija parkinga za otvoreno računarstvo">
+    <meta name="keywords" content="parking, zona, lokacija">
+    <meta name="author" content="Luka Čičak">
+    <link rel="stylesheet" type="text/css" href="/public/styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="naslov">PARKING BAZA PODATAKA</div> 
+        </nav>
+    </header>
+    <ul>
+        <li>AUTOR: Luka Čičak</li>
+        <li>VERZIJA: 1.0</li>
+        <li>JEZIK: postgresql</li>
+        <li>LICENCA:  GNU General Public License </li>
+    </ul>
+    
+    <ul>
+        <h2>OPIS BAZE</h2>
+        <li>Entitet Parking
+            <ul>
+                <li>ID - identifikator parkinga, primarni ključ, za svaki parking jedinstven, ne smije biti NULL, INTEGER</li>
+                <li>imeParkinga - ime parkinga, ne mora biti jednistveno, ne smije biti NULL, VARCHAR</li>
+                <li>brojMjesta - ukupni broj mjesta na nekom parkingu, uključuje i invalidska mjesta, ne smije biti NULL, INTEGER</li>
+                <li>brojInvalidskihMjesta - ukupan broj svih invalidskih mjesta, ne smije biti NULL, moze biti 0, INTEGER</li>
+                <li>vrsta - vrsta parkinga, dozvoljene vrijednosti su: [automobilski, kamionski, autobusni, biciklistički, mješoviti], ne smije biti NULL, VARCHAR</li>
+                <li>zona - vrsta parkirne zone, podatak iz strane tablice, prikazuje se ID zone, ne smije biti NULL, VARCHAR</li>
+                <li>županija - županija u kojoj se nalazi parking, ne smije biti NULL, VARCHAR</li>
+                <li>grad -  grad u kojem se nalazi parking, ne smije biti NULL, VARCHAR</li>
+                <li>kvart - kvart u kojem se nalazi parking, ne smije biti NULL, VARCHAR</li>
+                <li>ulica - ulica u kojoj se nalazi parking, ne smije biti NULL, VARCHAR</li>
+                <li>kućniBroj - kućni broj ulice u kojoj se nalazi parking, ne smije biti NULL, VARCHAR</li>
+            </ul>
+        </li>
+        <li>Entitet Zona
+            <ul>
+                <li>zona - identifikator zone, za svaku zonu jedninstven, primarni ključ, ne smije biti NULL, VARCHAR</li>
+                <li>dnevnaKarta - cijena dnevne karte za zonu, izražena u KN, ne smije biti NULL, FLOAT</li>
+                <li>pozivniBroj - telefonski broj preko kojeg se plaća zona, ne mora biti jedinstven, smije biti NULL, INTEGER</li>
+            </ul>
+        </li>
+        <li>Dodatno
+            <ul>
+                <li>identifikator zone je varchar umjesto integera zato što je klasifikacija zona takva da postoje zone 'I.1 zona' i 'I.2 zona'</li>
+                <li>pozivni broj također nije jedinstven zbog klasifikacije zona, zone 'I.1 zona' i 'I.2 zona' imaju isti pozivni broj jer su varijacije 1.zone</li>
+                <li>dnevna karta smije biti NULL jer postoji besplatan parking</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="divbtn">
+        <a class="table_button" href="/datatable">
+            <button class="base_button" onclick="">PREGLED BAZE</button>
+        </a>
+    </div>
+    <br>
+    <div>PREUZIMANJA:</div>
+    <div class="divbtn">
+        <a href="/Exporti/parking.json" class="table_button" download="parking.json">
+            <button class="base_button">JSON</button>
+        </a>
+    </div>
+    <div class="divbtn">
+        <a href="/Exporti/parking.csv" class="table_button" download="parking.csv">
+            <button class="base_button">CSV</button>
+        </a>
+    </div>
+</body>
+</html>
