@@ -16,23 +16,13 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="naslov">BAZA PODATAKA</div> 
+        </nav>
+    </header>
     <table class="stripe display" id="parking" style="width: 100%;">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ime Parkinga</th>
-                <th>Broj mjesta</th>
-                <th>Broj Invalidskih mjesta</th>
-                <th>Vrsta</th>
-                <th>Županija</th>
-                <th>Grad</th>
-                <th>Kvart</th>
-                <th>Ulica</th>
-                <th>Kućni broj</th>
-                <th>Zona</th>
-                <th>Dnevna karta (kn)</th>
-                <th>Pozivni broj</th>
-            </tr>
         </thead>
         <tbody></tbody>
     </table> 
@@ -70,43 +60,111 @@
             </div>
         </fieldset>
     </form>
+    <br>
+    <br>
+    <form method="post" action="/api/parkings/new">
+        <fieldset>
+            <legend style="font-size: larger;">Dodaj zapis</legend>
+            <div class="dodaj">
+                <input name="imeparkinga" type="text" placeholder="Ime parkinga" required>
+            </div>
+            <div class="dodaj">
+                <input name="brojmjesta" type="text" placeholder="Broj mjesta required">
+            </div> 
+            <div class="dodaj">
+                <input name="brojinvalidskihmjesta" type="text" placeholder="Broj invalidskih mjesta" required>
+            </div> 
+            <div class="dodaj">
+                <label for="vrsta">Vrsta: </label>
+                <select name="vrsta" id="vrsta">
+                    <% for(var i = 0; i < types.length; i++) {%>
+                        <option><%= types[i] %></option>
+                    <% } %>
+                </select>
+            </div> 
+            <div class="dodaj">
+                <input name="županija" type="text" placeholder="Županija" required>
+            </div>
+            <div class="dodaj">
+                <input name="grad" type="text" placeholder="Grad" required>
+            </div> 
+            <div class="dodaj">
+                <input name="kvart" type="text" placeholder="Kvart" required>
+            </div> 
+            <div class="dodaj">
+                <input name="ulica" type="text" placeholder="Ulica" required>
+            </div>
+            <div class="dodaj">
+                <input name="kućnibroj" type="text" placeholder="Kućni broj" required>
+            </div>
+            <div class="dodaj">
+                <label for="zona">Zona: </label>
+                <select name="zona" id="zona">
+                    <% for(var i = 0; i < zones.length; i++) {%>
+                        <option><%= zones[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="submit">
+                <button type="submit">Dodaj</button> 
+            </div>
+        </fieldset>
+    </form>
+    <br>
+    <br>
 </body>
 
 <script>
-    var podatci = '<%-data%>';
-    var lista = podatci.split(",");
-    var ls = new Array();
 
-    for(var j = 0; j < lista.length; j++){
-        if (lista[j] == ""){
-            lista[j] = "NULL";
-        }
+    async function deleteParking(id) {
+        console.log("Usao u delete za " + id);
+        await fetch("http://localhost:3000/api/parkings/delete/" + id, { method:'DELETE'} );
+        location.reload();
+    }
+
+    function edit(id) {
+        location.href = "/datatable/" + id;
     }
     
-    for(var i = 0; i < lista.length; i+=13) {
-        var temp = [];
-        temp.push(lista[1+i]);
-        temp.push(lista[2+i]);
-        temp.push(lista[3+i]);
-        temp.push(lista[4+i]);
-        temp.push(lista[5+i]);
-        temp.push(lista[6+i]);
-        temp.push(lista[7+i]);
-        temp.push(lista[8+i]);
-        temp.push(lista[9+i]);
-        temp.push(lista[10+i]);
-        temp.push(lista[0+i]);
-        temp.push(lista[11+i]);
-        temp.push(lista[12+i]);
-        ls.push(temp);
-    }
+    async function fetchParkings() {
+        var lista;
+        var podatci = new Array();
+        const response = await fetch("http://localhost:3000/api/parkings");
+        lista = await response.json();
+        lista = lista.response;
 
-    $(document).ready(function() {
+        for (var pom of lista) {
+            var temp = [];
+            temp.push(pom[1]);
+            temp.push(pom[2]);
+            temp.push(pom[3]);
+            temp.push(pom[4]);
+            temp.push(pom[5]);
+            temp.push(pom[6]);
+            temp.push(pom[7]);
+            temp.push(pom[8]);
+            temp.push(pom[9]);
+            if (pom[10] != null)
+                temp.push(pom[10]);
+            else
+                temp.push("NULL");
+            temp.push(pom[0]);
+            temp.push(pom[11]);
+            temp.push(pom[12]);
+            temp.push(pom[1]);
+            temp.push(pom[1]);
+            podatci.push(temp);
+        }
+        return podatci;
+    }
+    
+    $(document).ready(async function() {
+        var ls = await fetchParkings();
         var table = $("#parking").DataTable({
             dom: 'Bfrltip',
             paging: true,
             data: ls,
-            lengthMenu: [5, 10, 15],
+            lengthMenu: [10, 15],
             processing: true,
             buttons: [
                 'csv',
@@ -120,6 +178,31 @@
                         );
                     }
                 }
+            ],
+            columns: [
+            {title: 'ID'},
+            {title: 'Ime Parkinga'},
+            {title: 'Broj Mjesta'},
+            {title: 'Broj Invalidskih Mjesta'},
+            {title: 'Vrsta'},
+            {title: 'Županija'},
+            {title: 'Grad'},
+            {title: 'Kvart'},
+            {title: 'Ulica'},
+            {title: 'Kućni Broj'},
+            {title: 'Zona'},
+            {title: 'Dnevna Karta'},
+            {title: 'Pozivni Broj'},
+            {title: '', wrap: true, render: function (id) 
+                        {
+                            return '<button type="submit" onClick="deleteParking(' + id + ');" value="0" class="red">Obriši</button>'
+                        } 
+            },
+            {title: '', wrap: true, render: function (id) 
+                        {
+                            return '<button type="submit" onClick="edit(' + id + ');" value="0" class="red">Uredi</button>'
+                        } 
+            }
             ]     
         });
 

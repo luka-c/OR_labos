@@ -8,7 +8,19 @@ body {
     font-family: simple;
     align-items: center;
     margin: 0;
-    margin-top: 15px;
+} 
+
+.naslov {
+    font-size: xx-large;
+}
+
+header {
+    background-color: rgb(51,51,51);
+    font-weight: bold;
+    color: rgb(111,198,170);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 table {
@@ -80,4 +92,18 @@ div {
     background-color: rgb(51,51,51);
     color: rgb(111,198,170);
     border-radius: 5px;
+}
+
+.dodaj {
+    margin-bottom: 2px;
+}
+
+.red {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
 }

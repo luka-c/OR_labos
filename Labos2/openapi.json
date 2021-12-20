@@ -1,0 +1,504 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "description": "OpenAPI specifikacija za Parking bazu podataka.",
+    "version": "1.0.0",
+    "title": "Parking API",
+    "contact": "cicak.luka@gmail.com",
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "paths": {
+    "/parkings": {
+      "get": {
+        "tags": [
+          "parkings"
+        ],
+        "summary": "Get all parkings",
+        "description": "The user will recieve a list of all parkings",
+        "operationId": "getParkings",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Parkings"
+            }
+          },
+          "404": {
+            "description": "There are no parkings to get"
+          }
+        }
+      }
+    },
+    "/parkings/{id}": {
+      "get": {
+        "tags": [
+          "parkings"
+        ],
+        "summary": "Get parking by id",
+        "description": "The user will recieve a parking with the provided id",
+        "operationId": "getParkingsById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of parking to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ParkingResponse"
+            }
+          },
+          "400": {
+            "description": "Parking id has to be of type: Integer"
+          },
+          "404": {
+            "description": "Parking with that id doesn't exist"
+          }
+        }
+      }
+    },
+    "/parkings/new": {
+      "post": {
+        "tags": [
+          "parkings"
+        ],
+        "summary": "Create new parkings",
+        "description": "The user defines a new parking and sends that data to the api and then they recieve the created parking back",
+        "operationId": "addParking",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ParkingCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Failed to create parking"
+          }
+        }
+      }
+    },
+    "/parkings/edit/{id}": {
+      "put": {
+        "tags": [
+          "parkings"
+        ],
+        "summary": "Edit parking by id",
+        "description": "The user will send data to update about the parking with the provided id and in return recieve the edited version",
+        "operationId": "editParkingById",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of parking to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Parking object with updated info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Parking"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ParkingEditResponse"
+            }
+          },
+          "400": {
+            "description": "Parking id has to be of type: Integer/Failed to update parking"
+          },
+          "404": {
+            "description": "Parking with that id doesn't exist"
+          }
+        }
+      }
+    },
+    "/parkings/delete/{id}": {
+      "delete": {
+        "tags": [
+          "parkings"
+        ],
+        "summary": "Get parking by id",
+        "description": "The user will recieve a parking with the provided id",
+        "operationId": "deleteParkingById",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of parking to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/DeleteResponse"
+            }
+          },
+          "400": {
+            "description": "Parking id has to be of type: Integer"
+          },
+          "404": {
+            "description": "Parking with that id doesn't exist"
+          }
+        }
+      }
+    },
+    "/types": {
+      "get": {
+        "tags": [
+          "types"
+        ],
+        "summary": "Get all types",
+        "description": "The user will recieve a list of all types of parkings",
+        "operationId": "getTypes",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/TypesResponse"
+            }
+          }
+        }
+      }
+    },
+    "/zones": {
+      "get": {
+        "tags": [
+          "zones"
+        ],
+        "summary": "Get all zones",
+        "description": "The user will recieve a list of all parking zones",
+        "operationId": "getZones",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ZoneResponse"
+            }
+          },
+          "404": {
+            "description": "There are no zones to get"
+          }
+        }
+      }
+    },
+    "/zones/{id}": {
+      "get": {
+        "tags": [
+          "zones"
+        ],
+        "summary": "Get all zones by id",
+        "description": "The user will recieve a list of parking zones which all startt with the identifier",
+        "operationId": "getZonesById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of zone to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ZoneResponse"
+            }
+          },
+          "404": {
+            "description": "Zone with that id does not exist"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Parking": {
+      "type": "object",
+      "required": [
+        "imeparking",
+        "brojmjesta",
+        "brojinvalidskihmjesta",
+        "vrsta",
+        "županija",
+        "grad",
+        "kvart",
+        "ulica",
+        "kućnibroj",
+        "zona"
+      ],
+      "properties": {
+        "imeparking": {
+          "type": "string",
+          "description": "name of parking",
+          "example": "Parking strojarska"
+        },
+        "brojmjesta": {
+          "type": "integer",
+          "format": "int64",
+          "description": "number of spaces in a certain parking",
+          "example": 100
+        },
+        "brojinvalidskihmjesta": {
+          "type": "integer",
+          "format": "int64",
+          "description": "number of handicapped spaces in a certain parking",
+          "example": 30
+        },
+        "vrsta": {
+          "type": "string",
+          "description": "type of parking",
+          "example": "automobilski",
+          "enum": [
+            "automobilski",
+            "kamionski",
+            "autobusni",
+            "biciklistički",
+            "mješoviti"
+          ]
+        },
+        "županija": {
+          "type": "string",
+          "description": "county of parking",
+          "example": "Grad Zagreb"
+        },
+        "grad": {
+          "type": "string",
+          "description": "city of parking",
+          "example": "Zagreb"
+        },
+        "kvart": {
+          "type": "string",
+          "description": "neighbourhood of parking",
+          "example": "Borngaj"
+        },
+        "ulica": {
+          "type": "string",
+          "description": "street of parking",
+          "example": "Ulica kneza Branimira"
+        },
+        "kućnibroj": {
+          "type": "string",
+          "description": "street number of parking, is of type string to account for street numbers with letters in them",
+          "example": "2A"
+        },
+        "zona": {
+          "type": "string",
+          "description": "type of parking zone",
+          "example": "I. zona"
+        }
+      }
+    },
+    "Parkings": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Fetched parkings"
+        },
+        "response": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Parking"
+          }
+        }
+      }
+    },
+    "ParkingResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Fetched parking"
+        },
+        "response": {
+          "$ref": "#/definitions/Parking"
+        }
+      }
+    },
+    "ParkingCreateResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Created parking"
+        },
+        "response": {
+          "$ref": "#/definitions/Parking"
+        }
+      }
+    },
+    "ParkingEditResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 202
+        },
+        "message": {
+          "type": "string",
+          "example": "Updated parking"
+        },
+        "response": {
+          "$ref": "#/definitions/Parking"
+        }
+      }
+    },
+    "Types": {
+      "type": "array",
+      "example": [
+        "automobilski",
+        "kamionski",
+        "autobusni",
+        "biciklistički",
+        "mješoviti"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "TypesResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Fetched types"
+        },
+        "response": {
+          "$ref": "#/definitions/Types"
+        }
+      }
+    },
+    "Zone": {
+      "type": "object",
+      "properties": {
+        "zona": {
+          "type": "string",
+          "description": "identifier of parking zone",
+          "example": "I. zona"
+        },
+        "dnevnakarta": {
+          "type": "integer",
+          "description": "cost of a daily ticket of a parking zone",
+          "example": 60
+        },
+        "pozivnibroj": {
+          "type": "integer",
+          "description": "call number of parking zone",
+          "example": 700101
+        }
+      }
+    },
+    "ZoneResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Fetched zone"
+        },
+        "response": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Zone"
+          }
+        }
+      }
+    },
+    "DeleteResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Deleted parking"
+        },
+        "response": {
+          "type": "integer",
+          "description": "the id that was sent as a parameter",
+          "example": 1
+        }
+      }
+    }
+  }
+}
