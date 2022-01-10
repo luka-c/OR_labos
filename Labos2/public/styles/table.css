@@ -12,6 +12,32 @@ body {
 
 .naslov {
     font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.btn {
+    align-items: center;
+    width: 50px;
+    font-size: medium;
+    margin-left: 40px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    background-color: rgb(111,198,170);
+    color: rgb(51,51,51);
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 header {

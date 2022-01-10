@@ -88,6 +88,17 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Parking object with updated info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Parking"
+            }
+          }
+        ], 
         "responses": {
           "201": {
             "description": "Successful operation",

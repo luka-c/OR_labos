@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body style="text-align:center">
+    <header>
+        <nav>
+            <div class="naslov">PROFIL</div> 
+        </nav>
+    </header>
+    <div style="margin-top: 10%; justify-content: center; display: flex;">
+        <fieldset style="background-color: whitesmoke; border-radius: 7px;">
+            <img style="border: 5px solid #555; border-radius: 7px; margin-bottom: 15px;" src="<%= user.picture %>">
+            <br>
+            <label for="nickname">Nadimak:</label> 
+            <input id="nickname" type="text" value="<%= user.nickname %>">
+            <label for="name">Ime:</label> 
+            <input id="name" type="text" value="<%= user.name %>">
+            <label for="mail">E-mail:</label> 
+            <input id="mail" type="text" value="<%= user.email %>">
+        </fieldset>
+    </div>
+    <br>
+    <a class="btn" href="/logout">LOGOUT</a>
+</body>
+
+<style>
+    @font-face {
+    font-family: simple;
+    src: url(/public/styles/SIMPLIFICA\ Typeface.ttf);
+    }
+
+    .naslov {
+    font-size: xx-large;
+    }
+
+    fieldset {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+        border: 2px solid black;
+    }
+
+    body {
+        font-family: simple;
+        font-size: larger;
+        font-weight: bold;
+        background-color: rgb(111,198,170);
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+    background-color: rgb(51,51,51);
+    font-weight: bold;
+    color: rgb(111,198,170);
+    text-align: center;
+    margin-top: 0px;
+    font-size: larger;
+    }  
+
+    label {
+        display: block;
+        text-align: center;
+        font-size: larger;
+    }
+
+    input {
+        font-family: simple;
+        font-size: larger; 
+        text-align: center; 
+        border-radius: 7px; 
+        margin-bottom: 10px;
+        width: 18%;
+    }
+
+    .btn {
+        align-items: center;
+        width: 50px;
+        font-size: large;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        color: rgb(111,198,170);
+        background-color: rgb(51,51,51);
+        padding: .375rem .75rem;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+</style>
+</html>

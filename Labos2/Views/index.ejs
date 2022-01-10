@@ -13,7 +13,14 @@
 <body>
     <header>
         <nav>
-            <div class="naslov">PARKING BAZA PODATAKA</div> 
+            <div class="naslov">
+                PARKING BAZA PODATAKA
+                <% if(user !== undefined){ %>
+                    <a class="btn" href="/profile">PROFIL</a>
+                <% } else { %>
+                    <a class="btn" href="/login">PRIJAVA</a>
+                <% } %>
+            </div> 
         </nav>
     </header>
     <ul>

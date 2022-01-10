@@ -18,7 +18,14 @@
 <body>
     <header>
         <nav>
-            <div class="naslov">BAZA PODATAKA</div> 
+            <div class="naslov">
+                BAZA PODATAKA
+                <% if(user !== undefined){ %>
+                    <a class="btn" href="/profile">PROFIL</a>
+                <% } else { %>
+                    <a class="btn" href="/login">PRIJAVA</a>
+                <% } %>
+            </div> 
         </nav>
     </header>
     <table class="stripe display" id="parking" style="width: 100%;">
